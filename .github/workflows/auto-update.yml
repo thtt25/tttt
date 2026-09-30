@@ -47,7 +47,7 @@ jobs:
       - name: Show current time
         run: |
           echo "Current datetime: $(date -u +'%Y-%m-%dT%H:%M:%SZ')"
-          cp python\*.py .
+          cp python/* .
           if [ -f helloworld.py ]; then
             python helloworld.py
           fi
