@@ -224,7 +224,7 @@ jobs:
         run: |
           git config --local user.name "tttt [bot]"
           git add lastupdated.txt
-          git add src/*
+          git add src/*.*
           # git add etc/testing/host.txt
 
           echo "checking any changes"
