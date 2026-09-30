@@ -33,7 +33,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v7
         with:
-          repository: thtt
+          repository: thtt25/thtt
           token: ${{ secrets.PAT_TH }}
           
       - name: Set up Python 3.12
