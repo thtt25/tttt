@@ -34,7 +34,7 @@ jobs:
         uses: actions/checkout@v7
         with:
           repository: thtt
-          token: ${{ secrets.GH_PAT }}
+          token: ${{ secrets.PAT_TH }}
           
       - name: Set up Python 3.12
         uses: actions/setup-python@v6
@@ -47,7 +47,10 @@ jobs:
       - name: Show current time
         run: |
           echo "Current datetime: $(date -u +'%Y-%m-%dT%H:%M:%SZ')"
-          python helloworld.py
+          cp python\*.py .
+          if [ -f helloworld.py ]; then
+            python helloworld.py
+          fi
           git pull
           
       - name: Get links to M3U files
@@ -93,6 +96,13 @@ jobs:
           mkdir -p src
           ls -lh
 
+          
+          echo "#EXTM3U" > lastupdated.m3u
+          echo "#EXTINF:-1 group-title=\"Updated $(TZ=Asia/Bangkok date +'%d/%m %H:%M')\", $(TZ=Asia/Bangkok date +'%d/%m %H:%M')" >> lastupdated.m3u
+          echo "https://freem3u.xyz/static/no-signal/low.m3u8" >> lastupdated.m3u
+          cat lastupdated.m3u >> ${{ secrets.NAME_TTTHETHAO }}
+          echo " " >> ${{ secrets.NAME_TTTHETHAO }}
+          
           if [ -f vuasancotv.m3u ]; then
             echo " " >> ${{ secrets.NAME_TTTHETHAO }}
             cat vuasancotv.m3u >> ${{ secrets.NAME_TTTHETHAO }}
@@ -212,8 +222,9 @@ jobs:
       
       - name: Commit and push changes
         run: |
-          git config --local user.name "thcoban [bot]"
+          git config --local user.name "tttt [bot]"
           git add lastupdated.txt
+          git add src/*
           # git add etc/testing/host.txt
 
           echo "checking any changes"
@@ -222,4 +233,4 @@ jobs:
           fi
           
           git pull
-          git commit --allow-empty -m "[no ci] Update repo" && git push
+          git commit --allow-empty -m "[no ci] updated repo" && git push
