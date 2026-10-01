@@ -229,8 +229,8 @@ jobs:
       - name: Commit and push changes
         run: |
           git config --local user.name "tttt [bot]"
-          git add lastupdated.txt
           git add src/*.*
+          # git add lastupdated.txt
           # git add etc/testing/host.txt
 
           echo "checking any changes"
