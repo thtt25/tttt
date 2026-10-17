@@ -71,7 +71,7 @@ jobs:
           
           if [ -f apisports.py ]; then
             python apisports.py sutbong sutbongtv.m3u &
-            # python apisports.py khandai khandaitv.m3u &
+            python apisports.py khoga khogatv.m3u &
             python apisports.py phalang phalangtv.m3u &
             python apisports.py xoigac xoigactv.m3u &
 
@@ -109,9 +109,9 @@ jobs:
             cat vuasancotv.m3u >> ${{ secrets.NAME_TTTHETHAO }}
             echo " " >> ${{ secrets.NAME_TTTHETHAO }}
           fi
-          if [ -f khandaitv.m3u ]; then
+          if [ -f khogatv.m3u ]; then
             echo " " >> ${{ secrets.NAME_TTTHETHAO }}
-            cat khandaitv.m3u >> ${{ secrets.NAME_TTTHETHAO }}
+            cat khogatv.m3u >> ${{ secrets.NAME_TTTHETHAO }}
             echo " " >> ${{ secrets.NAME_TTTHETHAO }}
           fi
           if [ -f chuoichientv.m3u ]; then
