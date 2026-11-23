@@ -105,19 +105,14 @@ jobs:
           cat lastupdated.m3u >> ${{ secrets.NAME_TTTHETHAO }}
           echo " " >> ${{ secrets.NAME_TTTHETHAO }}
           
-          if [ -f vuasancotv.m3u ]; then
+          if [ -f chuoichientv.m3u ]; then
             echo " " >> ${{ secrets.NAME_TTTHETHAO }}
-            cat vuasancotv.m3u >> ${{ secrets.NAME_TTTHETHAO }}
+            cat chuoichientv.m3u >> ${{ secrets.NAME_TTTHETHAO }}
             echo " " >> ${{ secrets.NAME_TTTHETHAO }}
           fi
           if [ -f khogatv.m3u ]; then
             echo " " >> ${{ secrets.NAME_TTTHETHAO }}
             cat khogatv.m3u >> ${{ secrets.NAME_TTTHETHAO }}
-            echo " " >> ${{ secrets.NAME_TTTHETHAO }}
-          fi
-          if [ -f chuoichientv.m3u ]; then
-            echo " " >> ${{ secrets.NAME_TTTHETHAO }}
-            cat chuoichientv.m3u >> ${{ secrets.NAME_TTTHETHAO }}
             echo " " >> ${{ secrets.NAME_TTTHETHAO }}
           fi
           if [ -f giovangtv.m3u ]; then
@@ -133,6 +128,11 @@ jobs:
           if [ -f s8tv.m3u ]; then
             echo " " >> ${{ secrets.NAME_TTTHETHAO }}
             cat s8tv.m3u >> ${{ secrets.NAME_TTTHETHAO }}
+            echo " " >> ${{ secrets.NAME_TTTHETHAO }}
+          fi
+          if [ -f vuasancotv.m3u ]; then
+            echo " " >> ${{ secrets.NAME_TTTHETHAO }}
+            cat vuasancotv.m3u >> ${{ secrets.NAME_TTTHETHAO }}
             echo " " >> ${{ secrets.NAME_TTTHETHAO }}
           fi
           if [ -f saoketv.m3u ]; then
